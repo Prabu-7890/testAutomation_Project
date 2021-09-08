@@ -1,8 +1,12 @@
 s3_bucket="upgrad-prabakar"
 myname="prabakar"
+
+#updating the packages
 echo "Updating the packages"
-run_sudo=$(sudo apt update -y)
-echo "$run_sudo"
+sudo apt update -y
+sudo apt upgrade -y
+
+
 
 echo "installing apache2"
 install_apache2=$(sudo apt install apache2 -y)
@@ -19,7 +23,7 @@ else
     echo "Apache2 service not running"
 fi
 
-timestamp="$(date '+%d%m%Y-%H%M%S')"
+timestamp=$(date '+%d%m%Y-%H%M%S')
 filename="/tmp/${myname}-httpd-logs-${timestamp}.tar"
 
 
